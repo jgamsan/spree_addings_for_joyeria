@@ -22,7 +22,7 @@
         <!-- Carousel items -->
           <div class="carousel-inner">
             <div class="active item">
-              <%= image_tag "store/fondo_004.jpg" >
+              <%= image_tag "store/fondo_004.jpg" %>
               <div class="container"></div>
             </div>
             <div class="item">
