@@ -1,4 +1,4 @@
-<!-- replace "data-hook 'body'" -->
+<!-- replace 'body' -->
 <div class="buscador">
   <form class="navbar-search pull-left">
     <input type="text" class="search-query" placeholder="Search">
