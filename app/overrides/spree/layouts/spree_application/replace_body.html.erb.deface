@@ -26,11 +26,11 @@
               <div class="container"></div>
             </div>
             <div class="item">
-              <img src="store/fondo_005.jpg" alt="description" title="description" width="" height="" />
+              <%= image_tag "store/fondo_005.jpg" %>
               <div class="container"></div>
             </div>
             <div class="item">
-              <img src="store/fondo_006.jpg" alt="description" title="description" width="" height="" />
+              <%= image_tag "store/fondo_006.jpg" %>
               <div class="container"></div>
             </div>
           </div>
