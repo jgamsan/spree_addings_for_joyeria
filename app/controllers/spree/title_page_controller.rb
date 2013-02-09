@@ -1,6 +1,6 @@
 module Spree
   class TitlePageController < BaseController
-    layout "tienda/portada"
+    layout "/tienda/portada"
     def index
     end
   end
