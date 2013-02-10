@@ -1,6 +1,6 @@
 module Spree
   class AboutController < BaseController
-    layout "/tienda/contenido"
+    layout '/tienda/contenido'
     def index
     end
   end
