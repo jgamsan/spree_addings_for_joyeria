@@ -38,7 +38,6 @@
       </div>
       <div class="span12">
         <%= image_tag "store/logo.png" %>
-        <img src="store/logo.png" alt="description" title="description" width="" height="" />
       </div>
       <div class="span2">
         <ul class="nav nav-list">
