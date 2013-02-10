@@ -1,0 +1,18 @@
+<%= form_for :user, :url => spree.user_session_path, :html => {:class => "form login-form"} do |f| %>
+
+  <legend>Login <span class="blue">Joyeria</span></legend>
+
+  <div class="body" id="password-credentials">
+    <label>Usuario</label>
+    <%= f.text_field :username %>
+    <label>Password</label>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="footer">
+    <label class="checkbox inline">
+      <input type="checkbox" id="inlineCheckbox1" value="option1"> Remember me
+    </label>
+    <%= f.submit t(:login), :class => "btn btn-success" %>
+  </div>
+<% end %>
