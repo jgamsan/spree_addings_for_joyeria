@@ -1,6 +1,6 @@
 <div id="login-wraper">
-  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form login-form"}) do |f| %>
-    <legend>Login <span class="blue">Clinica Nutricion</span></legend>
+  <%= form_for:user, :url => spree.user_session_path, :html => {:class => "form login-form"}) do |f| %>
+    <legend>Login <span class="blue">Joyeria</span></legend>
     <div class="body">
       <label><%= t(:email) %></label>
       <%= f.text_field :email %>
