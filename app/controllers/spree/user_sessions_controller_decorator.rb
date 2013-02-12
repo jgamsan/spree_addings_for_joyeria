@@ -1,3 +1,4 @@
 Spree::UserSessionsController.class_eval do
-  layout 'tienda/sessions'
+  helper 'spree/users', 'spree/base'
+  layout "tienda/sessions"
 end
