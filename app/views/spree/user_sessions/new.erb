@@ -1,5 +1,5 @@
 <div id="login-wraper">
-  <%= form_for:user, :url => spree.user_session_path, :html => {:class => "form login-form"} do |f| %>
+  <%= form_for :user, :url => spree.user_session_path, :html => {:class => "form login-form"} do |f| %>
     <legend>Login <span class="blue">Joyeria</span></legend>
     <div class="body">
       <label><%= t(:email) %></label>
