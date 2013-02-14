@@ -1,0 +1,51 @@
+<%
+  paginated_products = @searcher.retrieve_products if params.key?(:keywords)
+  paginated_products ||= products
+%>
+<% if products.empty? %>
+  <div class="alert alert-info" style="margin-left:-10px;margin-right:10px;">
+    <h3 style="text-align:center;"><%= t(:no_products_found) %></h3>
+  </div>
+<% end %>
+<% if products.any? %>
+  <div id="products" style="margin-bottom: 20px;"data-hook>
+    <% products.each do |product| %>
+      <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
+        <%= form_for :order, :url => populate_orders_url do |f| %>
+          <div class="span4" style="background-color: #e2d161; height: 120px;">
+            <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url',  :data => {:title => "#{product.name}", :content => "#{large_image(product)}"}, :id => "example" %>
+          </div>
+          <div class="span8" style="background-color: #e2d130; height: 120px;">
+            <h6><%= product.taxons.last.name %></h6>
+            <div class="row">
+              <div class="span1">
+                <h4 style="color:red; padding-top:10px;"><%= product.price_in(current_currency).display_price %></h4>
+              </div>
+            </div>
+          </div>
+          <div class="span6">
+            <h4 style="text-align:right;"><%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %></h4>
+            
+            <div class="span2">
+              <%= button_tag :class => 'btn btn-primary btn-small', :id => 'add-to-cart-button', :type => :submit do %>
+                <i class="icon-shopping-cart icon-white"></i>
+                <%= t(:add_to_cart) %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+        <hr style="background-color:#888a85;height:2px;width:600px;">
+      <% end %>
+    <% end %>
+  </div>
+<% end -%>
+
+
+<% if paginated_products.respond_to?(:num_pages) %>
+  <div class="pagination">
+    <%= paginate paginated_products %>
+  </div>
+<% end %>
+<script>
+    $("a#example").popover({trigger:'hover', placement:'bottom', html:true});
+</script>

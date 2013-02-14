@@ -1,0 +1,48 @@
+<div class="span12">
+  <h1><%= t(:shopping_cart) %></h1>
+  <% if @order.line_items.empty? %>
+    <div data-hook="empty_cart">
+      <p><%= t(:your_cart_is_empty) %></p>
+      <p><%= link_to t(:continue_shopping), root_path, :class => 'btn btn-primary' %></p>
+    </div>
+  <% else %>
+    <div data-hook="outside_cart_form">
+      <%= form_for @order, :url => update_cart_path, :html => {:id => 'update-cart'} do |order_form| %>
+        <div data-hook="inside_cart_form">
+          <div data-hook="cart_items">
+            <%= render :partial => 'form', :locals => { :order_form => order_form } %>
+          </div>
+          <div class="row">
+            <div class="span4">
+              <%= button_tag :class => 'btn btn-primary', :id => 'update-button' do %>
+                <i class="icon-refresh icon-white"></i>
+                <%= t(:update) %>
+              <% end %>
+              <%= button_tag :class => 'btn btn-primary', :id => 'checkout-link', :name => 'checkout' do %>
+                <i class="icon-check icon-white"></i>
+                <%= t(:checkout) %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="span5 offset3">
+        <div id="empty-cart" data-hook>
+          <%= form_tag empty_cart_path, :method => :put do %>
+            <%#= submit_tag t(:empty_cart), :class => 'btn btn-primary' %>
+            <button type="submit" class="btn btn-primary">
+              <i class="icon-remove icon-white"></i> <%= t(:empty_cart) %>
+            </button>
+            <%= t(:or) %>
+            <%= link_to root_path, :class => 'btn btn-primary' do %>
+              <i class="icon-shopping-cart icon-white"></i>
+              <%= t(:continue_shopping) %>
+            <% end -%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
