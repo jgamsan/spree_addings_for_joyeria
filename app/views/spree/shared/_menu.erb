@@ -6,10 +6,10 @@
   <li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Galería de fotos<b class="caret"></b></a>
     <ul class="dropdown-menu">
-      <li><a href="contenido.html">Nueva Colección</a></li>
+      <li><%= link_to 'Nueva Colección', seo_url(@nueva) %></li>
       <li class="divider"></li>
-      <li><a href="contenido.html">Colección Oro</a></li>
-      <li><a href="contenido.html">Colección Plata</a></li>
+      <li><%= link_to 'Colección Oro', seo_url(@oro) %></li>
+      <li><%= link_to 'Colección Plata', seo_url(@plata) %></li>
     </ul>
   </li>
   <li><a href="contenido.html">Contacto</a></li>
