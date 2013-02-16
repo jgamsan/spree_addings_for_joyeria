@@ -14,7 +14,7 @@
         <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
           <%= form_for :order, :url => populate_orders_url do |f| %>
             <div class="row-fluid">
-              <div class="span3">
+              <div class="span2">
                 <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %>
               </div>
               <div class="span2">
