@@ -1,6 +1,6 @@
 module Spree
   class TitlePageController < BaseController
-    layout "/tienda/portada"
+    layout "/tienda/contenido"
     def index
       @taxonomies = Spree::Taxonomy.includes(:root => :children).first
       @t_root = @taxonomies.root

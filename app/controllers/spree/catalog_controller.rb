@@ -1,6 +1,6 @@
 module Spree
   class CatalogController < BaseController
-    layout '/tienda/index_tienda'
+    layout '/tienda/contenido'
     def index
       @taxonomies = Spree::Taxonomy.includes(:root => :children).first
       @t_root = @taxonomies.root
