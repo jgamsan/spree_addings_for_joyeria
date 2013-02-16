@@ -14,13 +14,13 @@
         <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
           <%= form_for :order, :url => populate_orders_url do |f| %>
             <div class="row-fluid">
-              <div class="span4" style="background-color: #e2d161;">
+              <div class="span3" style="background-color: #e2d161;">
                 <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url',  :data => {:title => "#{product.name}", :content => "#{large_image(product)}"}, :id => "example" %>
               </div>
               <div class="span2" style="background-color: #e2d130;">
                 <h4 style="color:red; padding-top:10px;"><%= product.price_in(current_currency).display_price %></h4>
               </div>
-              <div class="span4">
+              <div class="span3">
                 <h5 style="text-align:right;"><%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %></h4>
               </div>
               <div class="span2">
