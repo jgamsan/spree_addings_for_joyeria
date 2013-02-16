@@ -9,7 +9,7 @@
 <% end %>
 <% if products.any? %>
   <div id="products" style="margin-bottom: 20px;"data-hook>
-    <div class="row-fluid"></div>
+    <div class="row-fluid">
       <% products.each do |product| %>
         <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
           <%= form_for :order, :url => populate_orders_url do |f| %>
