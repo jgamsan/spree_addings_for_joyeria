@@ -48,12 +48,12 @@
             <li class="dropdown-submenu">
               <a tabindex="-1" href="#">Galería de fotos</a>
               <ul class="dropdown-menu">
-                <li><a href="tienda/contenido.html">Nueva Colección</a></li>
-                <li><a href="tienda/contenido.html">Colección Oro</a></li>
-                <li><a href="tienda/contenido.html">Colección Plata</a></li>
+                <li><a href="/t/coleccion/nueva-coleccion">Nueva Colección</a></li>
+                <li><a href="/t/coleccion/coleccion-oro">Colección Oro</a></li>
+                <li><a href="/t/coleccion/coleccion-plata">Colección Plata</a></li>
               </ul>
             </li>
-            <li><a href="tienda/contenido.html">Contacto</a></li>
+            <li><%= link_to t('spree.contact_us.contacts.new.contact_us'), '/contact-us'  %></li>
         </ul>
       </div>
     </div>
