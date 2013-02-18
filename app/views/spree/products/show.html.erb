@@ -5,7 +5,7 @@
         <%= breadcrumbs(@taxon) %>
       </ul>
       <div class="row-fluid" data-hook="product_show">
-        <div class="span12">
+        <div class="span9 offset2">
           <h1><%= accurate_title %></h1>
         </div>
       </div>
@@ -23,23 +23,21 @@
           </div>
         </div>
 
-        <div class="span9">
-          <div class="row-fluid">
-            <div class="span6">
-              <address>
-                <strong>Categoria:</strong> <span><%= @product.taxons.first.name.singularize %></span><br />
-                <strong>Codigo Producto:</strong> <span><%= @product.sku %></span><br />
-                <strong>Disponibles:</strong> <span><%= @product.count_on_hand %></span><br />
-              </address>
-            </div>
-            <div class="span6">
-              <div class="row-fluid">
-                <div id="cart-form" data-hook="cart_form">
-                  <%= render :partial => 'cart_form' %>
-                </div>
-              </div>
-            </div>
+        <div class="span6">
+
+        <div class="span6">
+          <address>
+            <strong>Categoria:</strong> <span><%= @product.taxons.first.name.singularize %></span><br />
+            <strong>Codigo Producto:</strong> <span><%= @product.sku %></span><br />
+            <strong>Disponibles:</strong> <span><%= @product.count_on_hand %></span><br />
+          </address>
+        </div>
+        <div class="span6">
+          <div id="cart-form" data-hook="cart_form">
+            <%= render :partial => 'cart_form' %>
           </div>
+        </div>
+
         </div>
       </div>
       <hr>
