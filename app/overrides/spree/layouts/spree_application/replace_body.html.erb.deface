@@ -14,8 +14,8 @@
   Saludos cordiales, Rosa Martínez."</p>
 </div>
 <div class="container">
-  <div class="container-fluid">
-    <div class="row-fluid">
+  
+    <div class="row">
       <div class="span12">
     <!--Body content-->
         <div id="myCarousel" class="carousel slide">
@@ -57,5 +57,5 @@
         </ul>
       </div>
     </div>
-  </div>
+  
 </div>
