@@ -18,7 +18,6 @@
       <div class="span12">
         
       <!--Body content-->
-          <%= image_tag "store/logo.png" %>
           <div id="myCarousel" class="carousel slide">
           <!-- Carousel items -->
             <div class="carousel-inner">
@@ -36,8 +35,11 @@
               </div>
             </div>
           </div>
+          <div id="logo-cons">
+            <%= image_tag "store/logo.png" %>  
+          </div>  
       </div>
-      <div class="span2">
+      <div class="span2" id="menu">
         <ul class="nav nav-list">
           <li class="nav-header">Joyería de Autor</li>
             <li><%= link_to 'Portada', title_page_index_url %></li>
