@@ -1,64 +1,66 @@
-<div class="span9">
-  <ul class="breadcrumb">
-    <%= breadcrumbs(@taxon) %>
-  </ul>
-  <div class="row" data-hook="product_show">
+<div class="container" style="padding: 180px 0;">
+  <div class="row-fluid">
     <div class="span9">
-      <h1><%= accurate_title %></h1>
-    </div>
-  </div>
-  <hr>
+      <ul class="breadcrumb">
+        <%= breadcrumbs(@taxon) %>
+      </ul>
+      <div class="row" data-hook="product_show">
+        <div class="span9">
+          <h1><%= accurate_title %></h1>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="span3"data-hook="product_images">
+          <div id="main-image" data-hook>
+            <%= render :partial => 'image' %>
+          </div>
+          <div id="thumbnails" data-hook>
+            <%= render :partial => 'thumbnails', :locals => { :product => @product } %>
+          </div>
+          <div data-hook="product_properties">
+            <%= render :partial => 'properties' %>
+          </div>
+        </div>
 
-  <div class="row">
-    <div class="span3"data-hook="product_images">
-      <div id="main-image" data-hook>
-        <%= render :partial => 'image' %>
-      </div>
-      <div id="thumbnails" data-hook>
-        <%= render :partial => 'thumbnails', :locals => { :product => @product } %>
-      </div>
-      <div data-hook="product_properties">
-        <%= render :partial => 'properties' %>
-      </div>
-    </div>
-
-    <div class="span6">
-
-      <div class="span6">
-        <address>
-          <strong>Categoria:</strong> <span><%= @product.taxons.first.name.singularize %></span><br />
-          <strong>Codigo Producto:</strong> <span><%= @product.sku %></span><br />
-          <strong>Disponibles:</strong> <span><%= @product.count_on_hand %></span><br />
-        </address>
-      </div>
-
-      <div id="cart-form" data-hook="cart_form">
-        <%= render :partial => 'cart_form' %>
-      </div>
-    </div>
-  </div>
-    <hr>
-    <div class="row">
-      <div class="span9">
-        <div class="tabbable">
-          <ul class="nav nav-tabs">
-            <li class="active"><a href="#1" data-toggle="tab">Descripcion</a></li>
-            <li><a href="#2" data-toggle="tab">Datos Tecnicos</a></li>
-            <li><a href="#3" data-toggle="tab">Comentarios</a></li>
-            <li><a href="#4" data-toggle="tab">Productos Similares</a></li>
-          </ul>
-          <div class="tab-content">
-            <div class="tab-pane active" id="1">
-              <%= product_description(@product) rescue t(:product_has_no_description) %>
+        <div class="span6">
+          <div class="span6">
+            <address>
+              <strong>Categoria:</strong> <span><%= @product.taxons.first.name.singularize %></span><br />
+              <strong>Codigo Producto:</strong> <span><%= @product.sku %></span><br />
+              <strong>Disponibles:</strong> <span><%= @product.count_on_hand %></span><br />
+            </address>
+          </div>
+          <div class="span6">
+            <div id="cart-form" data-hook="cart_form">
+              <%= render :partial => 'cart_form' %>
             </div>
-            <div class="tab-pane" id="2">
-              <%= render :partial => 'spree/products/tires_info' %>
-            </div>
-            <div class="tab-pane" id="3">
-              <p>No hay comentarios para este producto.</p>
-            </div>
-            <div class="tab-pane" id="4">
-              
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="span9">
+          <div class="tabbable">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#1" data-toggle="tab">Descripcion</a></li>
+              <li><a href="#2" data-toggle="tab">Datos Tecnicos</a></li>
+              <li><a href="#3" data-toggle="tab">Comentarios</a></li>
+              <li><a href="#4" data-toggle="tab">Productos Similares</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="1">
+                <%= product_description(@product) rescue t(:product_has_no_description) %>
+              </div>
+              <div class="tab-pane" id="2">
+
+              </div>
+              <div class="tab-pane" id="3">
+                <p>No hay comentarios para este producto.</p>
+              </div>
+              <div class="tab-pane" id="4">
+
+              </div>
             </div>
           </div>
         </div>
