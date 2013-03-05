@@ -1,3 +1,3 @@
 Spree::UserSessionsController.class_eval do
-  layout "/tienda/sessions"
+  layout '/tienda/sessions'
 end
